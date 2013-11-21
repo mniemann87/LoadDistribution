@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="library" name="Create library">
+	<!--this file was created by Eclipse Runnable JAR Export Wizard-->
+	<!--ANT 1.7 is required                                        -->
+	<property name="source" location="src" />
+	<property name="build" location="bin" />
+	<property name="dist" location="dist" />
+	<echo message="Ant running on Java version ${ant.java.version} in ${java.home}"/>
+
+<!--	<taskdef name="jarbundler" 
+	         classname="net.sourceforge.jarbundler.JarBundler" />
+	-->
+	<target name="library">
+		<javac srcdir="${source}" destdir="${build}">
+		</javac>
+		<jar update="true" destfile="${dist}/LoadDistribution.jar" basedir="${build}">
+		</jar>
+	</target>
+</project>
