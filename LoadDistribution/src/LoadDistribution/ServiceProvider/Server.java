@@ -25,6 +25,14 @@ public class Server implements Runnable{
 	
 	private int threads = 4;
 	
+	public Server(int receivePort, int sendPort, Credentials commander,
+			int threads) {
+		super();
+		this.receivePort = receivePort;
+		this.sendPort = sendPort;
+		this.commander = commander;
+		this.threads = threads;
+	}
 	@Override
 	public void run() {		
 		// listen on port and manage jobs

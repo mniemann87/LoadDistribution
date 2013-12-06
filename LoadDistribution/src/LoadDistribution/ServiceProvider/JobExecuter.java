@@ -21,10 +21,12 @@ public class JobExecuter implements Runnable {
 	public JobExecuter(int threads) {
 		super();
 		this.threads = threads;
+		currentRunners = new HashSet<Runner>();
+		finished = new HashSet<Runnable>();
+		remaining = new HashSet<Runnable>();
 	}
 	@Override
 	public void run() {
-		currentRunners = new HashSet<Runner>();
 		barrier = new Semaphore(threads);
 		while (true){
 			Runnable job;

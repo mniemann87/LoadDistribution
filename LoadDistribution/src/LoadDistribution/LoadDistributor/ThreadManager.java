@@ -63,7 +63,7 @@ public class ThreadManager implements Runnable{
 		//copy set of all jobs
 		Set<Runnable> remainingJobs = new HashSet<Runnable>();
 		finishedJobs = new HashSet<Runnable>();
-
+		jobStartTime = new HashMap<Runnable, Long>();
 		for (Runnable job : jobs){
 			remainingJobs.add(job);
 		}
