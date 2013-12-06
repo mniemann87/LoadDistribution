@@ -8,7 +8,7 @@ public class RunLocally {
 		long before = System.currentTimeMillis();
 		for (int i = 0; i < THREADS; i++){
 			barrier.acquireUninterruptibly();
-			PrimeTest p = new PrimeTest(10000000, barrier);
+			PrimeTest p = new PrimeTest(1000000, barrier);
 			Thread t = new Thread(p);
 			t.start();
 		}
